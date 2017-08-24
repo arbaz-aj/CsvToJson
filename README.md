@@ -1,1 +1,2 @@
 # CsvToJson
+This project is developed using c# dotnet core. It reads data from 3 csv files and produce 4 json files. One json file has illiterate and literate poulation of India. one json file has male and female population of India. one file has literate, illiterat, male and female population of north eastern state of India. One json file has state-wise literate and illitrate population of India.
