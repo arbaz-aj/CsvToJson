@@ -1,0 +1,9 @@
+D:\CsvToJsonV3\CsvToJsonV3\bin\Debug\netcoreapp1.1\CsvToJsonV3.deps.json
+D:\CsvToJsonV3\CsvToJsonV3\bin\Debug\netcoreapp1.1\CsvToJsonV3.runtimeconfig.json
+D:\CsvToJsonV3\CsvToJsonV3\bin\Debug\netcoreapp1.1\CsvToJsonV3.runtimeconfig.dev.json
+D:\CsvToJsonV3\CsvToJsonV3\bin\Debug\netcoreapp1.1\CsvToJsonV3.dll
+D:\CsvToJsonV3\CsvToJsonV3\bin\Debug\netcoreapp1.1\CsvToJsonV3.pdb
+D:\CsvToJsonV3\CsvToJsonV3\obj\Debug\netcoreapp1.1\CsvToJsonV3.csproj.CoreCompileInputs.cache
+D:\CsvToJsonV3\CsvToJsonV3\obj\Debug\netcoreapp1.1\CsvToJsonV3.AssemblyInfo.cs
+D:\CsvToJsonV3\CsvToJsonV3\obj\Debug\netcoreapp1.1\CsvToJsonV3.dll
+D:\CsvToJsonV3\CsvToJsonV3\obj\Debug\netcoreapp1.1\CsvToJsonV3.pdb
