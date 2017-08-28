@@ -83,7 +83,7 @@ namespace CsvToJsonV3
                     else                    
                         stateWiseLiterate[stateKey] += int.Parse(data[12]);
                     
-                    if (northEasternlist.Find(m => m == data[3]) == null ? false : true)
+                    if (!(northEasternlist.Find(m => m == data[3]) == null))
                     {
                         totalIlliterateMalesNE += int.Parse(data[10]);
                         totalIlliterateFemalesNE += int.Parse(data[11]);
