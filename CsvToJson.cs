@@ -1,20 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using System.Text;
 
+[assembly: AssemblyTitle("CsvToJson")]
+[assembly: AssemblyVersionAttribute("1.0.0")]
 namespace CsvToJsonV3
 {   //This class will convert csv to json
     class CsvToJson
     {
         int totalMales,totalFemales, totalIlliteratePerson, totalLiteratePerson, totalIlliterateMalesNE, totalIlliterateFemalesNE, totalLiterateMalesNE, 
             totalLiterateFemalesNE;
-        Dictionary<String, int> stateWiseIllitrate = new Dictionary<string, int>();//state as key and illiterate_persons as value
-        Dictionary<String, int> stateWiseLiterate = new Dictionary<string, int>();//state as key and Literate_persons as value
-        StringBuilder jsonBuilderSB = new StringBuilder();//For Building Json
+        private readonly Dictionary<String, int> stateWiseIllitrate; //state as key and illiterate_persons as value
+        private readonly Dictionary<String, int> stateWiseLiterate; //state as key and Literate_persons as value
+        private readonly StringBuilder jsonBuilderSB;//For Building Json
+        private readonly List<String> northEasternlist;
 
-        List<String> northEasternlist = new List<string> { "State - ARUNACHAL PRADESH", "State - ASSAM", "State - NAGALAND", "State - MEGHALAYA", "State - MANIPUR", "State - TRIPURA", "State - MIZORAM" };
-
+        public CsvToJson()//Constructor
+        {
+            stateWiseIllitrate = new Dictionary<string, int>();
+            stateWiseLiterate = new Dictionary<string, int>();
+            jsonBuilderSB = new StringBuilder();
+            northEasternlist = new List<string> { "State - ARUNACHAL PRADESH", "State - ASSAM", "State - NAGALAND",
+                                "State - MEGHALAYA", "State - MANIPUR", "State - TRIPURA", "State - MIZORAM" };
+        }
         public void JsonParser()
         {
             StreamReader csvFilereader = new StreamReader(new FileStream(@"..\\Data\\India2011.csv", FileMode.Open));
@@ -76,14 +86,13 @@ namespace CsvToJsonV3
                         stateWiseIllitrate.Add(stateKey, int.Parse(data[9]));
                     else  
                         stateWiseIllitrate[stateKey] += int.Parse(data[9]);
-                    
-                    String stateKeyLit = data[3].Split('-')[1].Remove(0, 1);
+                                      
                     if (!stateWiseLiterate.ContainsKey(stateKey))
                         stateWiseLiterate.Add(stateKey, int.Parse(data[12]));   
                     else                    
                         stateWiseLiterate[stateKey] += int.Parse(data[12]);
                     
-                    if (!(northEasternlist.Find(m => m == data[3]) == null))
+                    if (northEasternlist.Find(m => m == data[3]) != null)
                     {
                         totalIlliterateMalesNE += int.Parse(data[10]);
                         totalIlliterateFemalesNE += int.Parse(data[11]);
